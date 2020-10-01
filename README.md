@@ -49,8 +49,8 @@ has_one    :buyer
 
 ## Association
 has_one    :address
-belongs_to :user
-belongs_to :item
+belong_to :user
+belong_to :item
 
 ## addressテーブル
 
@@ -65,4 +65,4 @@ belongs_to :item
 | buyer          | references | null: false, foreign_key: true |
 
 ## Association
-belongs_to :buyer
+belong_to :buyer
