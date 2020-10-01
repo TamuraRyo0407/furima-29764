@@ -13,7 +13,7 @@
 | firstname           | string  | null: false |
 | familyname_katakana | string  | null: false |
 | firstname_katakana  | string  | null: false |
-| birthday            | date　　 | null: false |
+| birthday            | date    | null: false |
 
 
 ## Association
