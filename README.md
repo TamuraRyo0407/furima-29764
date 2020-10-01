@@ -29,10 +29,10 @@ has_many :buyer
 | name                  | string     | null: false                    |
 | text                  | text       | null: false                    |
 | category              | string     | null: false                    |
-| condition             | integer     | null: false                   |
-| delivery_fee_defrayer | integer     | null: false                   |
-| forwarder_area        | integer     | null: false                   |
-| sending_days          | integer     | null: false                   |
+| condition             | integer    | null: false                    |
+| delivery_fee_defrayer | integer    | null: false                    |
+| forwarder_area        | integer    | null: false                    |
+| sending_days          | integer    | null: false                    |
 | price                 | integer    | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 
