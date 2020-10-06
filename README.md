@@ -2,7 +2,7 @@
 
 # テーブル設計
 
-## usersテーブル
+## userテーブル
 
 | Column              | Type    | Options     |
 | ------------------- | ------- | ----------- |
@@ -21,7 +21,7 @@
 has_many :items
 has_many :buyers
 
-## itemsテーブル
+## itemテーブル
 
 | Column                   | Type       | Options                        |
 | ------------------------ | ---------- | ------------------------------ |
@@ -37,7 +37,7 @@ has_many :buyers
 
 ## Association
 
-belongs_to :user
+belongs_to  :user
 has_one    :buyer
 
 ## buyerテーブル
@@ -49,8 +49,8 @@ has_one    :buyer
 
 ## Association
 has_one    :address
-belong_to :user
-belong_to :item
+belongs_to :user
+belongs_to :item
 
 ## addressテーブル
 
@@ -65,4 +65,4 @@ belong_to :item
 | buyer          | references | null: false, foreign_key: true |
 
 ## Association
-belong_to :buyer
+belongs_to :buyer
