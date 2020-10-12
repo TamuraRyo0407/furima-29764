@@ -27,7 +27,7 @@ has_many :buyers
 | ------------------------ | ---------- | ------------------------------ |
 | name                     | string     | null: false                    |
 | text                     | text       | null: false                    |
-| category_id              | integer     | null: false                    |
+| category_id              | integer    | null: false                    |
 | condition_id             | integer    | null: false                    |
 | delivery_fee_defrayer_id | integer    | null: false                    |
 | forwarder_area_id        | integer    | null: false                    |
@@ -40,7 +40,7 @@ has_many :buyers
 belongs_to  :user
 has_one    :buyer
 
-## buyerテーブル
+## buyersテーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -52,7 +52,7 @@ has_one    :address
 belongs_to :user
 belongs_to :item
 
-## addressテーブル
+## addressesテーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
