@@ -2,7 +2,7 @@
 
 # テーブル設計
 
-## usersテーブル
+## userテーブル
 
 | Column              | Type    | Options     |
 | ------------------- | ------- | ----------- |
@@ -21,13 +21,13 @@
 has_many :items
 has_many :buyers
 
-## itemsテーブル
+## itemテーブル
 
 | Column                   | Type       | Options                        |
 | ------------------------ | ---------- | ------------------------------ |
 | name                     | string     | null: false                    |
 | text                     | text       | null: false                    |
-| category_id              | integer     | null: false                    |
+| category_id              | integer    | null: false                    |
 | condition_id             | integer    | null: false                    |
 | delivery_fee_defrayer_id | integer    | null: false                    |
 | forwarder_area_id        | integer    | null: false                    |
@@ -37,10 +37,10 @@ has_many :buyers
 
 ## Association
 
-belongs_to :user
+belongs_to  :user
 has_one    :buyer
 
-## buyerテーブル
+## buyersテーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -49,10 +49,10 @@ has_one    :buyer
 
 ## Association
 has_one    :address
-belong_to :user
-belong_to :item
+belongs_to :user
+belongs_to :item
 
-## addressテーブル
+## addressesテーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
@@ -65,4 +65,4 @@ belong_to :item
 | buyer          | references | null: false, foreign_key: true |
 
 ## Association
-belong_to :buyer
+belongs_to :buyer
