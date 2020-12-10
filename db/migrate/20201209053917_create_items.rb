@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :condition_id 
       t.integer :delivery_fee_defrayer_id
       t.integer :forwarder_area_id
-      t.integer :sending_days_id 
+      t.integer :sending_day_id 
       t.integer :price
       t.references :user, foreign_key: true 
       t.timestamps
