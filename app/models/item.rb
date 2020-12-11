@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :condition
   belongs_to :delivery_fee_defrayer
   belongs_to :forwarder_area
-  belongs_to :sending_days
+  belongs_to :sending_day
 
   with_options presence: true do
     validates :name
