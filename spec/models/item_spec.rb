@@ -26,7 +26,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Category can't be blank", "Category is not a number")
       end
       it "カテゴリーの情報が---では登録できない" do
-        @item.category_id = "1"
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
@@ -36,7 +36,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Condition can't be blank", "Condition is not a number")
       end
       it "商品の状態についての情報が---では登録できない" do
-        @item.condition_id  = "1"
+        @item.condition_id  = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
@@ -46,7 +46,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Delivery fee defrayer can't be blank", "Delivery fee defrayer is not a number")
       end
       it "配送料の負担についての情報が---では登録できない" do
-        @item.delivery_fee_defrayer_id  = "1"
+        @item.delivery_fee_defrayer_id  = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery fee defrayer must be other than 1")
       end
@@ -56,7 +56,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Forwarder area can't be blank", "Forwarder area is not a number")
       end
       it "発送元の地域についての情報が---では登録できない" do
-        @item.forwarder_area_id  = "1"
+        @item.forwarder_area_id  = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Forwarder area must be other than 1")
       end
@@ -66,7 +66,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Sending day can't be blank", "Sending day is not a number")
       end
       it " 発送までの日数についての情報が---では登録できない" do
-        @item.sending_day_id   = "1"
+        @item.sending_day_id   = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Sending day must be other than 1")
       end
@@ -76,12 +76,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it "価格が¥300以下では登録できない" do
-        @item.price = "299"
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
       it "価格が¥9,999,999より大きければ登録できない" do
-        @item.price = "10000000"
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end
