@@ -31,7 +31,7 @@ has_many :buyers
 | condition_id             | integer    | null: false                    |
 | delivery_fee_defrayer_id | integer    | null: false                    |
 | forwarder_area_id        | integer    | null: false                    |
-| sending_days_id          | integer    | null: false                    |
+| sending_day_id           | integer    | null: false                    |
 | price                    | integer    | null: false                    |
 | user                     | references | null: false, foreign_key: true |
 
