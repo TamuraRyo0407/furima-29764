@@ -31,14 +31,17 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       redirect_to root_path
-    else 
+    else
       render :edit 
     end
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    if  @item.destroy
+        redirect_to root_path
+    else
+        redirect_to  item_path
+    end
   end
 
   private
