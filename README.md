@@ -57,7 +57,7 @@ belongs_to :item
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | zip_code       | string     | null: false                    |
-| prefectures_id | integer    | null: false                    |
+| prefecture_id  | integer    | null: false                    |
 | municipality   | string     | null: false                    |
 | address        | string     | null: false                    |
 | building_name  | string     |                                |
