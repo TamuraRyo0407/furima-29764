@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action  @item = Item.find(params[:item_id]), only:[:index ,:create]
-  
+  before_action  :item_id_find, only:[:index ,:create]
+
   def index 
     @order = Order.new
   end
@@ -30,5 +30,8 @@ class OrdersController < ApplicationController
       card: order_params[:token],   
       currency: 'jpy'                 
     )
+  end
+  def item_id_find
+    @item = Item.find(params[:item_id])
   end
 end
