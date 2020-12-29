@@ -1,7 +1,7 @@
 class Order
   include ActiveModel::Model
-  attr_accessor :user_id ,:item_id,:zip_code,:prefecture_id,:municipality ,:address,:building_name ,:phone_number ,:hoge,:token
-  zennkaku = /\A[ぁ-んァ-ン一-龥]+\z/
+  attr_accessor :user_id ,:item_id,:zip_code,:prefecture_id,:municipality ,:address,:building_name ,:phone_number ,:token
+  zennkaku = /\A[ぁ-んァ-ン一-龠々]+\z/
 
   with_options presence: true do
     validates :zip_code,format: {with: /\A\d{3}[-]\d{4}\z/, message: "is invalid. Include hyphen(-)" }
@@ -10,6 +10,8 @@ class Order
     validates :address
     validates :phone_number,numericality: {only_integer: true},length: { maximum: 11 }
     validates :token
+    validates :user_id  
+    validates :item_id
   end  
   def save
     buyer = Buyer.create(user_id: user_id,item_id: item_id)
