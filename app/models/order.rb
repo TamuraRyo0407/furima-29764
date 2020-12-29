@@ -1,6 +1,6 @@
 class Order
   include ActiveModel::Model
-  attr_accessor :user_id ,:item_id,:zip_code,:prefecture_id,:municipality ,:address,:building_name ,:phone_number ,:hoge
+  attr_accessor :user_id ,:item_id,:zip_code,:prefecture_id,:municipality ,:address,:building_name ,:phone_number ,:hoge,:token
   zennkaku = /\A[ぁ-んァ-ン一-龥]+\z/
 
   with_options presence: true do
