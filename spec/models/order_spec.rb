@@ -54,7 +54,6 @@ RSpec.describe Order, type: :model do
       it "電話番号が十二文字以上だと登録出来ない" do
         @order.phone_number  = "111111111111"
         @order.valid?
-        #binding.pry
         expect(@order.errors.full_messages).to include( "Phone number is too long (maximum is 11 characters)")
       end
       it "tokenが空では登録できないこと" do
@@ -67,6 +66,10 @@ RSpec.describe Order, type: :model do
       it "全てが規定通りなら登録できる" do
         expect(@order).to be_valid
        end 
+      it "建物名が空でも登録できる" do
+        @order.building_name = ""
+        expect(@order).to be_valid
+      end 
     end
   end 
 end

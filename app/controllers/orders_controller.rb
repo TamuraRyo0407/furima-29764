@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
+  before_action  @item = Item.find(params[:item_id]), only:[:index ,:create]
+  
   def index 
-    @item = Item.find(params[:item_id])
     @order = Order.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order = Order.new(order_params)
     if  @order.valid?
 
