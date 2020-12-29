@@ -9,6 +9,7 @@ class Order
     validates :municipality,format: { with: zennkaku, message: "is invalid. Input full-width characters."}
     validates :address
     validates :phone_number,numericality: {only_integer: true},length: { maximum: 11 }
+    validates :token
   end  
   def save
     buyer = Buyer.create(user_id: user_id,item_id: item_id)

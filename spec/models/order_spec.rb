@@ -57,6 +57,11 @@ RSpec.describe Order, type: :model do
         #binding.pry
         expect(@order.errors.full_messages).to include( "Phone number is too long (maximum is 11 characters)")
       end
+      it "tokenが空では登録できないこと" do
+        @order.token = nil
+        @order.valid?
+        expect(@order.errors.full_messages).to include("Token can't be blank")
+      end
     end
     context '商品購入がうまく行くとき' do
       it "全てが規定通りなら登録できる" do
